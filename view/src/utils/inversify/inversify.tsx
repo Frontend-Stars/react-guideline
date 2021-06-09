@@ -34,7 +34,7 @@ export const withInversifyProvider = (
   };
 }
 
-export function useRegistration<T>(identifier: interfaces.ServiceIdentifier<T>, implementation: any): void {
+export function useRegistration<T>(identifier: interfaces.ServiceIdentifier<T>, implementation: new() => T): void {
   const container = useContainerFromContext();
 
   if (!checkAlreadyRegistered<T>(container, identifier)) {
@@ -42,7 +42,7 @@ export function useRegistration<T>(identifier: interfaces.ServiceIdentifier<T>, 
   }
 }
 
-export function useRegistrationConst<T>(identifier: interfaces.ServiceIdentifier<T>, implementation: any): void {
+export function useRegistrationConst<T>(identifier: interfaces.ServiceIdentifier<T>, implementation: T): void {
   const container = useContainerFromContext();
 
   if (!checkAlreadyRegistered<T>(container, identifier)) {
