@@ -45,11 +45,11 @@ export function useRegistration<T>(
   }
 }
 
-export function useRegistrationConst<T>(identifier: interfaces.ServiceIdentifier<T>, implementation: T): void {
+export function useRegistrationConst<T>(identifier: interfaces.ServiceIdentifier<T>, value: T): void {
   const container = useContainerFromContext();
 
   if (!checkAlreadyRegistered<T>(container, identifier)) {
-    container.bind<T>(identifier).toConstantValue(implementation);
+    container.bind<T>(identifier).toConstantValue(value);
   }
 }
 
