@@ -34,11 +34,14 @@ export const withInversifyProvider = (
   };
 }
 
-export function useRegistration<T>(identifier: interfaces.ServiceIdentifier<T>, implementation: new() => T): void {
+export function useRegistration<T>(
+    identifier: interfaces.ServiceIdentifier<T>,
+    constructor: new (...args: any[]) => T
+): void {
   const container = useContainerFromContext();
 
   if (!checkAlreadyRegistered<T>(container, identifier)) {
-    container.bind<T>(identifier).to(implementation);
+    container.bind<T>(identifier).to(constructor);
   }
 }
 
