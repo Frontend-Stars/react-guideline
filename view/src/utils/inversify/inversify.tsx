@@ -4,7 +4,7 @@ import { Container, interfaces } from 'inversify';
 const useContainerFromContext = (): interfaces.Container => {
   const container = useContext(InversifyContext);
 
-  if (!container) { throw new Error(); }
+  if (!container) { throw new Error('Provide InversifyContext is required!'); }
 
   return container;
 }
@@ -20,17 +20,20 @@ function checkAlreadyRegistered<T>(
 export const InversifyContext = React.createContext<interfaces.Container | null>(null);
 
 export const withInversifyProvider = (
-    Component: ComponentType
+    Component: ComponentType,
+    scope?: interfaces.BindingScope,
 ): React.FC => {
   return (): JSX.Element => {
-    const container = new Container({ defaultScope: 'Singleton' });
+    const container = new Container({ defaultScope: scope ?? 'Singleton' });
     const parentContainer = useContext(InversifyContext);
 
     if (parentContainer) container.parent = parentContainer;
 
-    return (<InversifyContext.Provider value={container}>
-      <Component />
-    </InversifyContext.Provider>)
+    return (
+      <InversifyContext.Provider value={container}>
+        <Component />
+      </InversifyContext.Provider>
+    );
   };
 }
 
