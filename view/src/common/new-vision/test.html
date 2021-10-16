@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test vision</title>
+  <style>
+    .root {}
+
+    :root {
+        --button-background: #f1f1f1;
+        --button-color: #000;
+        --button-border: 1px solid #000;
+        --button-border-radius: 4px;
+        --button-padding: 7px 10px;
+        --button-cursor: pointer;
+        /* hover state */
+        --button-hover-background: #f1f1f1;
+        --button-hover-color: #000;
+        --button-hover-border: 1px solid #000;
+        --button-hover-border-radius: 4px;
+        --button-hover-padding: 7px 10px;
+        --button-hover-cursor: pointer;
+    }
+
+    .button {
+        background: var(--button-background);
+        color: var(--button-color);
+        border: var(--button-border);
+        border-radius: var(--button-border-radius);
+        padding: var(--button-padding);
+        cursor: var(--button-cursor);
+    }
+    .button:hover {
+        background: var(--button-hover-background);
+        color: var(--button-hover-color);
+        border: var(--button-hover-border);
+        border-radius: var(--button-hover-border-radius);
+        padding: var(--button-hover-padding);
+        cursor: var(--button-hover-cursor);
+    }
+
+    .submit-button {
+        --button-background: #ff6a00;
+        --button-color: #fff;
+        --button-border: 1px solid #f1f1f1;
+        --button-border-radius: 6px;
+        --button-padding: 8px 12px;
+        /* hover state */
+        --button-hover-background: rgba(255, 106, 0, 0.9);
+        --button-hover-color: #fff;
+        --button-hover-border: 1px solid #f1f1f1;
+        --button-hover-border-radius: 6px;
+        --button-hover-padding: 8px 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="root">
+    <button class="button">this is base button</button>
+
+    <button class="button submit-button">this is submit button</button>
+  </div>
+</body>
+</html>
