@@ -1,0 +1,15 @@
+@import "../base/Button/styles";
+@import "../base/Text/styles";
+
+.submit-button {
+  // override base styles for button use css variables
+  @include button(#d1d1d1, 4px, 1px solid #a31a1a, flex);
+
+  height: 50px;
+  width: 200px;
+}
+
+.submit-text {
+  // override base styles for text use css variables
+  @include text(#d1d1d1, #a31a1a);
+}

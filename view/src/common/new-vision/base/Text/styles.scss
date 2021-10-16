@@ -1,0 +1,19 @@
+:root {
+  --text-display: inline;
+  --text-background: #f1f1f1;
+  --text-color: #000;
+}
+
+.text {
+  display: var(--text-display);
+  background: var(--button-background);
+  color: var(--text-color);
+}
+
+@mixin text($background, $color, $display: 'inline') {
+  & {
+    --text-display: $display;
+    --text-background: $background;
+    --text-color: $color;
+  }
+}
