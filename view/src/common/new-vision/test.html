@@ -13,13 +13,6 @@
         --button-border-radius: 4px;
         --button-padding: 7px 10px;
         --button-cursor: pointer;
-        /* hover state */
-        --button-hover-background: #f1f1f1;
-        --button-hover-color: #000;
-        --button-hover-border: 1px solid #000;
-        --button-hover-border-radius: 4px;
-        --button-hover-padding: 7px 10px;
-        --button-hover-cursor: pointer;
     }
 
     .button {
@@ -31,12 +24,12 @@
         cursor: var(--button-cursor);
     }
     .button:hover {
-        background: var(--button-hover-background);
-        color: var(--button-hover-color);
-        border: var(--button-hover-border);
-        border-radius: var(--button-hover-border-radius);
-        padding: var(--button-hover-padding);
-        cursor: var(--button-hover-cursor);
+        --button-background: #4b4b4b;
+        --button-color: #f1f1f1;
+        --button-border: 1px solid #000;
+        --button-border-radius: 4px;
+        --button-padding: 7px 10px;
+        --button-cursor: pointer;
     }
 
     .submit-button {
@@ -45,12 +38,13 @@
         --button-border: 1px solid #f1f1f1;
         --button-border-radius: 6px;
         --button-padding: 8px 12px;
-        /* hover state */
-        --button-hover-background: rgba(255, 106, 0, 0.9);
-        --button-hover-color: #fff;
-        --button-hover-border: 1px solid #f1f1f1;
-        --button-hover-border-radius: 6px;
-        --button-hover-padding: 8px 12px;
+    }
+    .submit-button:hover {
+        --button-background: rgba(255, 106, 0, 0.9);
+        --button-color: #fff;
+        --button-border: 1px solid #f1f1f1;
+        --button-border-radius: 6px;
+        --button-padding: 8px 12px;
     }
   </style>
 </head>
