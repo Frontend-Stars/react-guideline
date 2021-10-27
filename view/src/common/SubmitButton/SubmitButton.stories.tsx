@@ -7,9 +7,7 @@ import { SubmitButtonProps } from './types';
 export default {
   title: 'Example/SubmitButton',
   component: SubmitButton,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
+  argTypes: {},
 } as Meta;
 
 const Template: Story<SubmitButtonProps> = (args) => <SubmitButton {...args} />;
@@ -18,12 +16,14 @@ export const DefaultSubmitButton = Template.bind({});
 
 DefaultSubmitButton.args = {
   size: 'buttonL textM',
+  children: 'SubmitButton'
 };
 
 export const AnotherSubmitButton = Template.bind({});
 
 AnotherSubmitButton.args = {
   size: 'm',
+  children: 'MSubmitButton'
 };
 /*
 теперь мы сможем использовать компиляцию компонентов кнопка и текст и указывать размеры отдельно каждому или одним значением обоим для этого мы можем передавать размер использую значения

@@ -1,17 +1,15 @@
-import { TextProps } from '@common/base/Text/types';
+import { createElement } from 'react';
+import classNames from 'classnames';
 
+import { TextProps } from './types';
 import styles from './styles.scss';
 
 export const Text = ({
   inline = false,
   children,
   className
-}: TextProps) => {
-  const Component = inline ? 'span' : 'p';
-
-  return (
-    <Component className={styles.text + ' ' + className}>
-      {children}
-    </Component>
-  );
-};
+}: TextProps) => createElement(
+  inline ? 'span' : 'p',
+  { className: classNames(styles.text, className) },
+  children
+);

@@ -1,4 +1,4 @@
-import React, { useContext, ComponentType } from 'react';
+import React, { useContext, ComponentType, useEffect } from 'react';
 import { Container, interfaces } from 'inversify';
 
 const useContainerFromContext = (): interfaces.Container => {
@@ -13,8 +13,7 @@ function checkAlreadyRegistered<T>(
     container: interfaces.Container,
     identifier: interfaces.ServiceIdentifier<T>
 ): boolean {
-  // @ts-ignore library haven't api for check already registered dependency only current container
-  return container._bindingDictionary._map.get(identifier);
+  return container.isCurrentBound<T>(identifier);
 }
 
 export const InversifyContext = React.createContext<interfaces.Container | null>(null);
@@ -46,6 +45,12 @@ export function useRegistration<T>(
   if (!checkAlreadyRegistered<T>(container, identifier)) {
     container.bind<T>(identifier).to(constructor);
   }
+
+  useEffect(() => {
+    return () => {
+      container.unbind(identifier);
+    }
+  }, [container, identifier]);
 }
 
 export function useRegistrationConst<T>(identifier: interfaces.ServiceIdentifier<T>, value: T): void {
@@ -54,6 +59,12 @@ export function useRegistrationConst<T>(identifier: interfaces.ServiceIdentifier
   if (!checkAlreadyRegistered<T>(container, identifier)) {
     container.bind<T>(identifier).toConstantValue(value);
   }
+
+  useEffect(() => {
+    return () => {
+      container.unbind(identifier);
+    }
+  }, [container, identifier]);
 }
 
 export function useInjection<T>(identifier: interfaces.ServiceIdentifier<T>): T {

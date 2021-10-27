@@ -1,5 +1,6 @@
-import { TextProps } from '@common/base/Text/types';
 import { COMPONENT_DEFAULT_SIZE } from '@common/base/constants';
+
+import { TextProps } from './types';
 
 export const Text = ({
   size = COMPONENT_DEFAULT_SIZE,
