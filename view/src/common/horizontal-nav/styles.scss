@@ -1,0 +1,26 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  margin: 6px;
+  font-family: Verdana, serif;
+  font-size: 14px;
+
+  &__item {
+    display: block;
+    padding: 6px 10px;
+    border-radius: 6px;
+    color: #232323;
+    text-decoration: none;
+
+    &:hover {
+      background: black;
+      color: white;
+    }
+  }
+
+  &__active {
+    color: white;
+    background: black;
+  }
+}

@@ -335,6 +335,7 @@ module.exports = function (webpackEnv) {
         }),
         ...(modules.webpackAliases || {}),
         '@utils': paths.appSrc + '/utils',
+        '@containers': paths.appSrc + '/containers',
         '@common': paths.appSrc + '/common',
         '@config/production': paths.appSrc + '/config/' + process.env.NODE_ENV + '/config.ts',
       },
@@ -478,6 +479,7 @@ module.exports = function (webpackEnv) {
                 sourceMap: isEnvProduction
                   ? shouldUseSourceMap
                   : isEnvDevelopment,
+                modules: true,
               }),
               // Don't consider CSS imports dead code even if the
               // containing package claims to have no side effects.
@@ -511,6 +513,7 @@ module.exports = function (webpackEnv) {
                   sourceMap: isEnvProduction
                     ? shouldUseSourceMap
                     : isEnvDevelopment,
+                  modules: true,
                 },
                 'sass-loader'
               ),

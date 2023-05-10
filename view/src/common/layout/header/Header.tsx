@@ -1,16 +1,7 @@
-import styled from 'styled-components';
-import { ThemeList, withThemedComponent } from '@utils/theme';
-import { HeaderMini } from './theme/mini/HeaderMini';
-import { BaseHeader } from './theme/base/BaseHeader';
+import React, { PropsWithChildren } from 'react';
+import styles from './styles.scss';
 
-const ThemedHeader = styled(BaseHeader)`
-  background: ${(props) => props.theme.palette.primary};
-  height: 150px;
-`;
-
-export const Header = withThemedComponent({
-  [ThemeList.LIGHT]: ThemedHeader,
-  [ThemeList.DARK]: ThemedHeader,
-  [ThemeList.MINI]: HeaderMini,
-}, ThemedHeader);
+export const Header = ({ children }: PropsWithChildren<any>): JSX.Element => (
+    <header className={styles.header}>{children}</header>
+);
 

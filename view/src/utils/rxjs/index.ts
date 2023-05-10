@@ -10,7 +10,7 @@ export const useObservable =<T>(observable$: Observable<T>, initialValues: T) =>
     return () => {
       subs.unsubscribe();
     };
-  }, [observable$]);
+  }, []);
 
   return state;
 }
@@ -22,7 +22,7 @@ export const useObservableStateLess =<T>(observable$: Observable<T>) => {
     return () => {
       subs.unsubscribe();
     };
-  }, [observable$]);
+  }, []);
 }
 
 export * from './loading-wrapper.operator';

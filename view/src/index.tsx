@@ -1,22 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
-import { Root } from './containers/root/Root';
+import { RootScope } from '@containers/root/root.scope';
 import 'reset-css';
-
-if (process.env.NODE_ENV === 'development') {
-  const whyDidYouRender = require('@welldone-software/why-did-you-render');
-
-  whyDidYouRender(React, {
-    trackAllPureComponents: true,
-    trackHooks: true,
-    logOwnerReasons: true,
-  });
-}
 
 ReactDOM.render(
   <React.StrictMode>
-    <Root />
+    <RootScope />
   </React.StrictMode>,
   document.getElementById('root')
 );

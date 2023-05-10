@@ -44,6 +44,7 @@
     "eslint-plugin-testing-library": "^3.10.2",
     "eslint-webpack-plugin": "^2.5.4",
     "file-loader": "6.1.1",
+    "formik": "^2.2.9",
     "fs-extra": "^9.0.1",
     "html-webpack-plugin": "4.5.0",
     "identity-obj-proxy": "3.0.0",
@@ -53,6 +54,7 @@
     "jest-resolve": "26.6.0",
     "jest-watch-typeahead": "0.6.1",
     "mini-css-extract-plugin": "0.11.3",
+    "moment": "^2.29.4",
     "optimize-css-assets-webpack-plugin": "5.0.4",
     "pnp-webpack-plugin": "1.6.4",
     "postcss-flexbugs-fixes": "4.2.1",
@@ -61,13 +63,14 @@
     "postcss-preset-env": "6.7.0",
     "postcss-safe-parser": "5.0.2",
     "prompts": "2.4.0",
+    "query-string": "^7.1.0",
     "react": "^17.0.2",
     "react-app-polyfill": "^2.0.0",
     "react-dev-utils": "^11.0.3",
     "react-dom": "^17.0.2",
     "react-refresh": "^0.8.3",
-    "react-router": "^5.2.0",
-    "react-router-dom": "^5.2.0",
+    "react-router": "^6.2.1",
+    "react-router-dom": "^6.2.1",
     "reflect-metadata": "^0.1.13",
     "reset-css": "^5.0.1",
     "resolve": "1.18.1",
@@ -86,11 +89,12 @@
     "webpack": "4.44.2",
     "webpack-dev-server": "3.11.1",
     "webpack-manifest-plugin": "2.2.0",
-    "workbox-webpack-plugin": "5.1.4"
+    "workbox-webpack-plugin": "5.1.4",
+    "yup": "^0.32.11"
   },
   "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
+    "start": "GENERATE_SOURCEMAP=true node scripts/start.js",
+    "build": "GENERATE_SOURCEMAP=true node scripts/build.js",
     "test": "node scripts/test.js",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -132,7 +136,7 @@
       "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
     ],
     "testEnvironment": "jsdom",
-    "testRunner": "/Users/dmitrynizovsky/Workspace/lineate/luna/view/node_modules/jest-circus/runner.js",
+    "testRunner": "<rootDir>/node_modules/jest-circus/runner.js",
     "transform": {
       "^.+\\.(js|jsx|mjs|cjs|ts|tsx)$": "<rootDir>/config/jest/babelTransform.js",
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",

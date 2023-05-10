@@ -1,0 +1,18 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+}
+.active {
+  background: black;
+  color: white;
+}
+.btn,
+.separator {
+  padding: 4px 8px;
+}
+.btn {
+  border: 1px solid black;
+  border-radius: 4px;
+  cursor: pointer;
+}

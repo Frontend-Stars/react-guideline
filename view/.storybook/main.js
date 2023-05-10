@@ -17,6 +17,7 @@ module.exports = {
         alias: {
           ...config.resolve.alias,
           '@utils': paths.appSrc + '/utils',
+          '@modules': paths.appSrc + '/modules',
           '@common': paths.appSrc + '/common',
           '@config/production': paths.appSrc + '/config/' + process.env.NODE_ENV + '/config.ts',
         }

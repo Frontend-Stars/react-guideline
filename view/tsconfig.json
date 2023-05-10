@@ -4,6 +4,7 @@
     "paths": {
       "@utils/*": ["utils/*"],
       "@common/*": ["common/*"],
+      "@containers/*": ["containers/*"],
       "@config/production": ["config/production/config.ts"],
     },
     "target": "es5",

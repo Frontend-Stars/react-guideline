@@ -1,0 +1,92 @@
+:root {
+  --input-background-default: #fff;
+  --input-background-hover: #fff;
+
+  --input-border-width: 1px;
+  --input-border-color: #000;
+  --input-border-style: solid;
+  --input-border-radius: 0;
+
+  --input-border-width-top: var(--input-border-width);
+  --input-border-width-bottom: var(--input-border-width);
+  --input-border-width-left: var(--input-border-width);
+  --input-border-width-right: var(--input-border-width);
+
+  --input-border-color-top: var(--input-border-color);
+  --input-border-color-bottom: var(--input-border-color);
+  --input-border-color-left: var(--input-border-color);
+  --input-border-color-right: var(--input-border-color);
+
+  --input-border-style-top: var(--input-border-style);
+  --input-border-style-bottom: var(--input-border-style);
+  --input-border-style-left: var(--input-border-style);
+  --input-border-style-right: var(--input-border-style);
+
+  --input-border-radius-top-left: var(--input-border-radius);
+  --input-border-radius-top-right: var(--input-border-radius);
+  --input-border-radius-bottom-left: var(--input-border-radius);
+  --input-border-radius-bottom-right: var(--input-border-radius);
+}
+
+@mixin input-border-radius-width($width: 0) {
+  --input-border-radius: $width;
+}
+
+@mixin input-border-radius(
+  $top-left: 0,
+  $top-right: 0,
+  $bottom-left: 0,
+  $bottom-right: 0
+) {
+  --input-border-radius-top-left: $top-left;
+  --input-border-radius-top-right: $top-right;
+  --input-border-radius-bottom-left: $bottom-left;
+  --input-border-radius-bottom-right: $bottom-right;
+}
+
+@mixin input-background($color: #fff) {
+  --input-background-default: $color;
+}
+
+.input {
+  background: var(--input-background-default);
+
+  &.hover {
+    background: var(--input-background-hover);
+  }
+
+  border-top-width: var(--input-border-width-top);
+  border-bottom-width: var(--input-border-width-bottom);
+  border-left-width: var(--input-border-width-left);
+  border-right-width: var(--input-border-width-right);
+
+  border-top-color: var(--input-border-color-top);
+  border-bottom-color: var(--input-border-color-bottom);
+  border-left-color: var(--input-border-color-left);
+  border-right-color: var(--input-border-color-right);
+
+  border-top-style: var(--input-border-style-top);
+  border-bottom-style: var(--input-border-style-bottom);
+  border-left-style: var(--input-border-style-left);
+  border-right-style: var(--input-border-style-right);
+
+  border-top-left-radius: var(--input-border-radius-top-left);
+  border-top-right-radius: var(--input-border-radius-top-right);
+  border-bottom-left-radius: var(--input-border-radius-bottom-left);
+  border-bottom-right-radius: var(--input-border-radius-bottom-right);
+}
+
+.searchInput {
+  @include input-background(--red-chillpereps);
+}
+.searchInput.Touched {
+  @include input-background('sdaas');
+  text-shadow: #232323;
+
+  &:hover {
+    @include input-background('sdaas2');
+  }
+}
+.input_error {
+  border-color: red;
+}
