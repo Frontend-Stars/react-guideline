@@ -18,28 +18,14 @@
 - {name}.resource.ts - it's file with request to data from 3rd party or api
 - {name}.mapper.ts - it's file with implementation of transform data to another structure
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-план как переехать с текущей позиции проекта
-1. вынести левое меню как отдельный модуль
-2. вынести плашку в футере
-3. и нотификации
-4. создать монолит в2
-5. сделать проксирование на в2 для определенных урлов
-6. выбрать какой модуль мы хотим в нем использвовать как модуль федерейшен
-7. выбранный модуль нужно верхне уроврено подготовить к интеграции его в мололит 2
-8. затем можно глубже его рефаторить и польностью загонять в новую концепцию 
-   сверху вниз начанать с сервисов больше логики в них выносить и агрегирвоать взаимодействие в 
-   менеджерах и выделения других абстракций в отдельные реализации
-9. 
+###Diagram
+```mermaid
+graph TD;
+    Scope-->Container;
+    Container-->Provider;
+    Provider-->Initiator;
+    Provider-->Declaration-of-Dependencies;
+    Provider-->Router;
+    Router-->Specific-Component;
+    Specific-Component-->Scope;
+```
