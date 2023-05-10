@@ -23,9 +23,9 @@
 graph TD;
     Scope-->Container;
     Container-->Provider;
-    Provider-->Declaration-of-Dependencies;
-    Declaration-of-Dependencies-->Router;
+    Provider-->Declarations-of-Dependencies;
+    Declarations-of-Dependencies-->Router;
     Router-->Specific-Component;
-    Declaration-of-Dependencies-->Specific-Component;
+    Declarations-of-Dependencies-->Specific-Component;
     Specific-Component-->Scope;
 ```
