@@ -2,6 +2,8 @@
 
 ```mermaid
 graph TD;
+    ListResource-->ListMapper;
+    ListResource-->ListManager;
     ListManager-->BaseImplementationList;
     ListCollection-->ListManager;
     FilterService-->ListManager;
