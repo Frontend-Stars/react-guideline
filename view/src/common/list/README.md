@@ -16,3 +16,7 @@ graph TD;
     SortComponent-->SortService;
     ETCComponent-->ETCService;
 ```
+
+## Goal
+
+provide just resource and mapper for use base solution for specific case e.g: Mail, Feature
