@@ -1,10 +1,10 @@
 import { injectable } from 'inversify';
-import { TableMapper } from '@common/table';
 import { Feature } from '@containers/admin/modules/features/types';
 import { Collection } from '@utils/store';
+import { ListMapper } from '@common/list/base';
 
 @injectable()
-export class FeatureTableMapper implements TableMapper<Feature, Feature>{
+export class FeatureListMapper implements ListMapper<Feature, Feature>{
   to(data: Array<Feature>): Collection<Feature> {
     const collection: Collection<Feature> = {};
 

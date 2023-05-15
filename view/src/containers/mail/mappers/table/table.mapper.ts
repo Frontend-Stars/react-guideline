@@ -1,10 +1,10 @@
 import { injectable } from 'inversify';
-import { TableMapper } from '@common/table';
 import { Collection } from '@utils/store';
 import { Mail } from '@containers/mail/types';
+import { ListMapper } from '@common/list/base';
 
 @injectable()
-export class MailTableMapper implements TableMapper<Mail, Mail>{
+export class MailListMapper implements ListMapper<Mail, Mail>{
   to(data: Array<Mail>): Collection<Mail> {
     const collection: Collection<Mail> = {};
 

@@ -1,15 +1,15 @@
 import { Observable, of } from 'rxjs';
 import { injectable } from 'inversify';
-import {
-  TableRequestParams,
-  TableResource,
-  TableResponse,
-} from '@common/table';
 import { Mail } from '@containers/mail/types';
+import {
+  ListRequestParams,
+  ListResource,
+  ListResponse,
+} from '@common/list/base';
 
 @injectable()
-export class MailTableResource implements TableResource<Mail> {
-  get({ batch, page, filters }: TableRequestParams): Observable<TableResponse<Mail>> {
+export class MailTableResource implements ListResource<Mail> {
+  get({ batch, page, filters }: ListRequestParams): Observable<ListResponse<Mail>> {
     const searchFilter = filters['search'] || '';
     const data = Array(100)
       .fill(0)

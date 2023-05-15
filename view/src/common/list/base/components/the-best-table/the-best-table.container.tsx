@@ -1,8 +1,8 @@
+import React, { PropsWithChildren } from 'react';
 import {
-  TheBestTableProvider
-} from '@common/table/base/the-best-table.provider';
-import { PropsWithChildren } from 'react';
-import { TheBestTable } from '@common/table/base/the-best-table';
+  TheBestTable,
+  TheBestTableProvider,
+} from '@common/list/base/components';
 
 export const TheBestTableContainer = <RawData, TData>({children}: PropsWithChildren<any>) => {
   return (

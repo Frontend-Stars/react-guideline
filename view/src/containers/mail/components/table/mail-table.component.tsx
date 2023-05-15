@@ -1,14 +1,13 @@
-import { Table } from '@common/table/components/Table';
-import { Head } from '@common/table/components/Head';
-import { Body } from '@common/table/components/Body';
-import { Row } from '@common/table/components/Row';
-import { HRow } from '@common/table/components/HRow';
-import { Cell } from '@common/table/components/Cell';
-import { HCell } from '@common/table/components/HCell';
-import { CellText } from '@common/table/components/CellText';
-import { TheBestTableContainer } from '@common/table/base/the-best-table.container';
+import React from 'react';
 import { Mail } from '@containers/mail/types';
 import { SortComponent } from '@common/sort/base/sort.component';
+import {
+  Body, Cell,
+  CellText, HCell,
+  Head, HRow, Row,
+  Table,
+} from '@common/list/components';
+import { TheBestTableContainer } from '@common/list/base/components';
 
 const MailTableItem = ({ item }: { item: Mail }) => {
   return (

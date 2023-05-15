@@ -3,13 +3,12 @@ import { useObservableStateLess } from '@utils/rxjs';
 import { ButtonPagination } from '@common/pagination/button-pagination';
 import { SearchFilter } from '@common/filter/base/search';
 import { useInjection } from '@utils/inversify';
-import { TableManager } from '@common/table/base/managers/table.manager';
-import { TableManagerToken } from '@common/table';
+import { ListManager, ListManagerToken } from '@common/list/base';
 
 import styles from './styles.scss';
 
-export const TheBestTable = <RawData, TData>({ children }: PropsWithChildren<any>) => {
-  const manager = useInjection<TableManager<RawData, TData>>(TableManagerToken);
+export const TheBestList = <RawData, TData>({ children }: PropsWithChildren<any>) => {
+  const manager = useInjection<ListManager<RawData, TData>>(ListManagerToken);
 
   useObservableStateLess(manager.init$());
 

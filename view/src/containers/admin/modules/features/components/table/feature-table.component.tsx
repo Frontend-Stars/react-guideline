@@ -1,13 +1,4 @@
-import { Table } from '@common/table/components/Table';
-import { Head } from '@common/table/components/Head';
-import { Body } from '@common/table/components/Body';
-import { Row } from '@common/table/components/Row';
-import { HRow } from '@common/table/components/HRow';
-import { Cell } from '@common/table/components/Cell';
-import { HCell } from '@common/table/components/HCell';
-import { CellBoolean } from '@common/table/components/CellBoolean';
-import { CellText } from '@common/table/components/CellText';
-import { TheBestTableContainer } from '@common/table/base/the-best-table.container';
+import React from 'react';
 import { Feature } from '@containers/admin/modules/features/types';
 import { useInjection } from '@utils/inversify';
 import {
@@ -16,20 +7,19 @@ import {
   ListSelectionServiceToken,
 } from '@common/list-selection';
 import { useObservable } from '@utils/rxjs';
-import {
-  EditBoolFormComponent
-} from '@containers/admin/modules/features/components/edit-form/edit-bool-form.component';
-import {
-  EditNameFormComponent
-} from '@containers/admin/modules/features/components/edit-form/edit-name-form.component';
-import {
-  EditRuleFormComponent
-} from '@containers/admin/modules/features/components/edit-form/edit-rule-form.component';
 import { FormAction } from '@common/form/action';
+import { EditManager, EditManagerToken } from '@containers/admin/modules/features/managers/edit';
 import {
-  EditManager,
-  EditManagerToken,
-} from '@containers/admin/modules/features/managers/edit';
+  Body, Cell, CellBoolean,
+  CellText, HCell, Head, HRow,
+  Row, Table,
+} from '@common/list/components';
+import {
+  EditBoolFormComponent,
+  EditNameFormComponent,
+  EditRuleFormComponent,
+} from '@containers/admin/modules/features/components/edit-form';
+import { TheBestTableContainer } from '@common/list/base/components';
 
 const FeatureTableItem = ({ item }: { item: Feature }) => {
   const listService = useInjection<ListSelectionService>(ListSelectionServiceToken);

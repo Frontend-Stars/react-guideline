@@ -23,5 +23,5 @@ export const useAdminMenuInitial = (rootPath: string) => {
     return () => {
       service.remove(adminLink);
     };
-  }, [service]);
+  }, [service, rootPath]);
 }

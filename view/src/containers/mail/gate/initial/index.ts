@@ -13,5 +13,5 @@ export const useMailInitial = (rootPath: string) => {
     return () => {
       navService.remove(mailLink);
     }
-  }, [navService]);
+  }, [navService, rootPath]);
 }

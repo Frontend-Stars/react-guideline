@@ -10,6 +10,7 @@ export const useObservable =<T>(observable$: Observable<T>, initialValues: T) =>
     return () => {
       subs.unsubscribe();
     };
+  // eslint-disable-next-line
   }, []);
 
   return state;
@@ -22,6 +23,7 @@ export const useObservableStateLess =<T>(observable$: Observable<T>) => {
     return () => {
       subs.unsubscribe();
     };
+    // eslint-disable-next-line
   }, []);
 }
 

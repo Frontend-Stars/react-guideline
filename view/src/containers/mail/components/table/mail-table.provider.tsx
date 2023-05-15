@@ -1,16 +1,16 @@
 import { PropsWithChildren } from 'react';
 import { useRegistration } from '@utils/inversify';
-import {
-  TableMapper, TableMapperToken,
-  TableResource, TableResourceToken
-} from '@common/table';
 import { Mail } from '@containers/mail/types';
 import { MailTableResource } from '@containers/mail/resources/list/table.resource';
-import { MailTableMapper } from '@containers/mail/mappers/table/table.mapper';
+import { MailListMapper } from '@containers/mail/mappers/table/table.mapper';
+import {
+  ListMapper, ListMapperToken,
+  ListResource, ListResourceToken,
+} from '@common/list/base';
 
 export const MailTableProvider = ({children}: PropsWithChildren<any>) => {
-  useRegistration<TableMapper<Mail, Mail>>(TableMapperToken, MailTableMapper);
-  useRegistration<TableResource<Mail>>(TableResourceToken, MailTableResource);
+  useRegistration<ListMapper<Mail, Mail>>(ListMapperToken, MailListMapper);
+  useRegistration<ListResource<Mail>>(ListResourceToken, MailTableResource);
 
   return <>{children}</>;
 }
