@@ -1,4 +1,4 @@
-# План
+# Diagram
 
 ```mermaid
 graph TD;
